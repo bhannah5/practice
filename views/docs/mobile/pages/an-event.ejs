@@ -1,0 +1,58 @@
+<table id="main">
+    <tr>
+        <td>
+
+            <table class="content">
+
+                <% let date = getDateFromSql(event.date); %>
+
+                <tr>
+
+                <td id="img">
+
+                    <% if (event.poster) { %>
+                        <a target="_blank" id="#" href="<%= event.poster %>"></a>
+                            <img style="width: 90vw !important;" src="<%= event.poster %>" />
+                        </a>
+                    <% } else { %> 
+                        <img style="width: 90vw !important;" src="/images/default-event-poster.png" />
+                    <% } %>
+                    
+                </td>
+
+            </tr>
+
+                <tr>
+
+                <td id="content-body">
+
+                    <a id="a" style="font-size: 5.0vw;" href="/mobile/events/<%= event.id %>"><h1><%= event.title %></h1></a>
+                    
+                    <p style="font-size: 3.5vw;"><%= getDateLine(date) %> @ <%= getTimeLine(date) %></p>
+
+                    <p>
+                    <% if (event.url) { %>
+                        <a style="color:inherit; font-size: 3.0vw;" target="_blank" id="#" href="<%= event.url %>">Click to Sign Up</a>
+                        |
+                    <% } %>
+                        <a style="color:inherit; font-size: 3.0vw;" href="/mobile/">Go back</a>
+                    </p>
+
+                </td>
+
+                </tr>
+
+                <tr class="spacer"></tr>
+
+                <tr>
+                    <td colspan="2" class="full-description">
+                        <% if (event.description) { %>
+                            <%- marked(event.description) %>
+                        <% } %>
+                    <td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>

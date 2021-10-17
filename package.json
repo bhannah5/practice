@@ -1,0 +1,45 @@
+{
+    "name": "sophomore.stuysu.org",
+    "version": "1.0.0",
+    "description": "The Sophomore Caucus Website developed in Node with EJS, Express, and Sequelize. Features a publicly available frontend, REST API, and CMS.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stuysu/sophomore.stuysu.org.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/stuysu/sophomore.stuysu.org/issues"
+    },
+    "homepage": "https://github.com/stuysu/sophomore.stuysu.org#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "google-auth-library": "^7.6.2",
+        "jsonwebtoken": "^8.5.1",
+        "marked": "^2.0.1",
+        "morgan": "^1.10.0",
+        "mysql2": "^2.2.5",
+        "node-fetch": "^2.6.1",
+        "sequelize": "^6.6.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7",
+        "prettier": "^2.2.1",
+        "sqlite3": "^5.0.2"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": true,
+        "printWidth": 80
+    }
+}

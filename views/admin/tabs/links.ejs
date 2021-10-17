@@ -1,0 +1,53 @@
+<br>
+
+Click a link to modify or delete it. Drag any link over the link you want it to swap places with. (Drag and drop reordering is a WIP)
+
+<br>
+<br>
+
+<table id="links-table" class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Alias</th>
+            <th scope="col">Url</th>
+            <th scope="col">Confirm</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <td><input type="text" class="form-control" id="link-alias-input" placeholder="Click a link to modify..." disabled=true /></td>
+        <td><input type="text" class="form-control" id="link-url-input" placeholder="Click a link to modify..." disabled=true /></td> 
+        <td><button class="btn btn-primary" onclick="updateLink()">Update</button></td> 
+        <td><button class="btn btn-danger" onclick="removeLink()">&times;</button></td>
+    </tbody>
+
+    <tbody>
+        <td><input type="text" class="form-control" id="link-alias-add" placeholder="New link alias..." /></td>
+        <td><input type="text" class="form-control" id="link-url-add" placeholder="New link url..." /></td> 
+        <td><button class="btn btn-success" onclick="addLink()">Add</button></td> 
+        <td><button class="btn btn-warning" onclick="clearLink()">Clear</button></td>
+    </tbody>
+</table>
+
+<ul id="link-manager">
+
+    <% for (let link of links) { %>
+        
+        <li 
+            data-link-id="<%= link.id %>" 
+            id="link-<%= link.id %>" 
+            draggable="true" 
+            class="link draggable"
+
+            data-alias="<%= link.alias %>"
+            data-url="<%= link.url %>"
+        >
+        
+            <%= link.alias %> (<span><%= link.url %></span>)
+        
+        </li>
+
+    <% } %>
+
+</ul>
